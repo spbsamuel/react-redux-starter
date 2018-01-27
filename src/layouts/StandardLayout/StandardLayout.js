@@ -1,6 +1,7 @@
 import React from 'react'
 import cls from './StandardLayout.scss'
 import cx from 'classnames'
+import 'styles/core.scss'
 
 function StandardLayout({children, className, ...props}) {
   return (
