@@ -20,3 +20,9 @@ ReactDOM.render(
   <Root store={store}/>,
   document.getElementById('root')
 );
+
+if (__DEV__) {
+  if (module.hot) {
+    module.hot.accept();
+  }
+}

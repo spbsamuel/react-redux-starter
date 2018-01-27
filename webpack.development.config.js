@@ -12,6 +12,8 @@ const ENV_GLOBALS = {
 module.exports =
   {
     entry: [
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/dev-server',
       './src/app.js',
     ],
     output: {
@@ -27,7 +29,8 @@ module.exports =
     },
     devtool: 'source-map',
     plugins: [
-      new webpack.DefinePlugin(ENV_GLOBALS)
+      new webpack.DefinePlugin(ENV_GLOBALS),
+      new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
       loaders: [

@@ -4,6 +4,7 @@ const config = require('./webpack.development.config.js');
 
 const compiler = webpack(config);
 const server = new WebpackDevServer(compiler, {
+  hot: true,
   filename: config.output.filename,
   publicPath: config.output.publicPath,
 });

@@ -13,13 +13,24 @@ function storeFactory(initialState = {}) {
 
   if (__DEV__) applyReduxDevTools(enhancers);
 
-  return createStore(
+  const store = createStore(
     rootReducer,
     initialState,
     compose(
       ...enhancers
     )
   );
+
+  if (__DEV__){
+    if (module.hot) {
+      module.hot.accept('./reducers/rootReducer', () => {
+        const rootReducer = require('./reducers/rootReducer');
+        store.replaceReducer(rootReducer);
+      });
+    }
+  }
+  return store
+
 }
 
 export default storeFactory
