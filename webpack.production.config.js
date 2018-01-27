@@ -8,6 +8,14 @@ const PATHS = {
   dist: path.join(__dirname, 'dist')
 };
 
+const ENV_GLOBALS = {
+  'process.env': {
+    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  },
+  '__DEV__': JSON.stringify(process.env.NODE_ENV === 'development'),
+  '__PROD__': JSON.stringify(process.env.NODE_ENV === 'production'),
+};
+
 module.exports =
   {
     entry: [
@@ -25,6 +33,7 @@ module.exports =
       mainFiles: ["index.js"],
     },
     plugins: [
+      new webpack.DefinePlugin(ENV_GLOBALS),
       new webpack.optimize.UglifyJsPlugin({
         compress: {
           unused: true,

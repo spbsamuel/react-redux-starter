@@ -1,4 +1,13 @@
 const path = require('path');
+const webpack = require('webpack');
+
+const ENV_GLOBALS = {
+  'process.env': {
+    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+  },
+  '__DEV__': JSON.stringify(process.env.NODE_ENV === 'development'),
+  '__PROD__': JSON.stringify(process.env.NODE_ENV === 'production'),
+};
 
 module.exports =
   {
@@ -17,6 +26,9 @@ module.exports =
       mainFiles: ["index.js"],
     },
     devtool: 'source-map',
+    plugins: [
+      new webpack.DefinePlugin(ENV_GLOBALS)
+    ],
     module: {
       loaders: [
         {
