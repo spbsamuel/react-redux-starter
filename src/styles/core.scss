@@ -1,0 +1,21 @@
+:global {
+  @import '~normalize.css/normalize';
+  @import 'base';
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 100%;
+    font-family: Roboto, sans-serif;
+  }
+
+  a{
+    text-decoration: inherit;
+    color: inherit;
+  }
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 
+import 'styles/core.scss'
 import storeFactory from './store/storeFactory'
 import ConnectedCounter from 'connected_components/Counter'
 

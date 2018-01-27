@@ -50,7 +50,12 @@ module.exports =
                 localIdentName: '[path][name]---[local]',
               }
             },
-            'sass-loader'
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: [path.resolve(__dirname, "src")]
+              }
+            }
           ],
           exclude: /node_modules/
         },

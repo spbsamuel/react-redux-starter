@@ -6,14 +6,14 @@ import reactLogo from './assets/React-icon.png'
 
 function Counter({count, increment, decrement}) {
   const CountClass = cx(
-    cls.Count,
+    'secondary',
     {
       [cls.Negative]: count < 0,
       [cls.Positive]: count > 0
     }
   );
   return (
-    <div>
+    <div className='text-center'>
       <img src={reactLogo}/>
       <h1 className={CountClass}>
         {count}
