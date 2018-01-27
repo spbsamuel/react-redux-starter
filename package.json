@@ -4,5 +4,11 @@
   "description": "Bare minimum react starter",
   "main": "index.js",
   "author": "samuel",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  }
 }
