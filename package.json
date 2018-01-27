@@ -6,7 +6,8 @@
   "author": "samuel",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "build:prod": "webpack --config webpack.production.config.js",
+    "build:dev": "webpack --config webpack.development.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
