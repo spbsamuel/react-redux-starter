@@ -1,5 +1,6 @@
-import {compose, createStore} from 'redux';
+import {applyMiddleware, compose, createStore} from 'redux';
 import rootReducer from './reducers/rootReducer';
+import {routerMiddleware} from 'react-router-redux';
 
 function applyReduxDevTools(enhancers) {
   const devToolsExtension = window.devToolsExtension;
@@ -8,8 +9,9 @@ function applyReduxDevTools(enhancers) {
   }
 }
 
-function storeFactory(initialState = {}) {
+function storeFactory(initialState = {}, history) {
   const enhancers = [];
+  const middleware = [routerMiddleware(history)];
 
   if (__DEV__) applyReduxDevTools(enhancers);
 
@@ -17,6 +19,7 @@ function storeFactory(initialState = {}) {
     rootReducer,
     initialState,
     compose(
+      applyMiddleware(...middleware),
       ...enhancers
     )
   );

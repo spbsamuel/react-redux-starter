@@ -1,23 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
+import {ConnectedRouter} from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 
 import storeFactory from './store/storeFactory'
-import ConnectedCounter from 'connected_components/Counter'
+import Routes from 'routes'
 
 const initialState = {};
+const history = createHistory();
 const store = storeFactory(initialState);
 
-function Root({store}) {
+function Root({store, history}) {
   return (
     <Provider store={store}>
-      <ConnectedCounter/>
+      <ConnectedRouter history={history}>
+        <Routes/>
+      </ConnectedRouter>
     </Provider>
   )
 }
 
 ReactDOM.render(
-  <Root store={store}/>,
+  <Root store={store} history={history}/>,
   document.getElementById('root')
 );
 
