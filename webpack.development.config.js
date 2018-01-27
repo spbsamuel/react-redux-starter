@@ -1,8 +1,4 @@
 const path = require('path');
-const PATHS = {
-  src: path.join(__dirname, 'src'),
-  dist: path.join(__dirname, 'dist')
-};
 
 module.exports =
   {
@@ -10,8 +6,7 @@ module.exports =
       './src/app.js',
     ],
     output: {
-      path: PATHS.dist,
-      publicPath: '/dist/',
+      publicPath: '/static/',
       filename: 'app.js'
     },
     resolve: {
@@ -48,6 +43,7 @@ module.exports =
           test: /\.(png|jpg|jpeg)$/,
           loader: 'url-loader',
           options: {
+            name: '[name]-[hash:base64:10].[ext]',
             limit: 8192,
           },
           exclude: /node_modules/
