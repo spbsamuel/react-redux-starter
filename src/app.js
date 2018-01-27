@@ -1,9 +1,13 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 import './app.scss'
 
-function helloWorldComponent() {
-  const HelloWorldHeader = document.createElement('h1');
-  HelloWorldHeader.textContent = 'Hello World';
-  return HelloWorldHeader
+function HelloWorld() {
+  return <h1>Hello World</h1>
 }
 
-document.body.appendChild(helloWorldComponent());
+
+ReactDOM.render(
+<HelloWorld/>,
+document.getElementById('root')
+);
