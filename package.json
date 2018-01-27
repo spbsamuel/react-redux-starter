@@ -6,7 +6,7 @@
   "author": "samuel",
   "license": "MIT",
   "scripts": {
-    "build:prod": "webpack --config webpack.production.config.js",
+    "build:prod": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "build:dev": "webpack --config webpack.development.config.js"
   },
   "devDependencies": {

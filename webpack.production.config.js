@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
@@ -24,6 +25,13 @@ module.exports =
       mainFiles: ["index.js"],
     },
     plugins: [
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          unused: true,
+          dead_code: true,
+          warnings: false
+        }
+      }),
       new ExtractTextPlugin({
         filename: 'app.css',
         allChunks: true
