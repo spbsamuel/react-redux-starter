@@ -14,6 +14,12 @@ module.exports =
       publicPath: '/dist/',
       filename: 'app.js'
     },
+    resolve: {
+      modules: [
+        "node_modules",
+        path.resolve(__dirname, "src"),
+      ],
+    },
     devtool: 'source-map',
     module: {
       loaders: [

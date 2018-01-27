@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 
 import storeFactory from './store/storeFactory'
-import ConnectedCounter from './connected_components/Counter/container'
+import ConnectedCounter from 'connected_components/Counter/container'
 import './app.scss'
 
 const initialState = {};
