@@ -1,16 +1,13 @@
+@import 'styles/main_variables';
+
 .CounterBtn{
   padding: 10px;
-  margin: 5px;
 }
 
 .Positive{
-  color: green;
+  color: $green;
 }
 
 .Negative{
-  color: red;
-}
-
-.Count{
-  font-family: sans-serif;
+  color: $red;
 }

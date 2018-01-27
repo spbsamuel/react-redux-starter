@@ -4,6 +4,7 @@ import {Provider} from 'react-redux'
 import {ConnectedRouter} from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 
+import 'styles/core.scss'
 import storeFactory from './store/storeFactory'
 import Routes from 'routes'
 

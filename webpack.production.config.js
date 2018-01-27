@@ -67,7 +67,12 @@ module.exports =
                   localIdentName: '[hash:base64:10]',
                 }
               },
-              'sass-loader'
+              {
+                loader: 'sass-loader',
+                options: {
+                  includePaths: [path.resolve(__dirname, "src")]
+                }
+              }
             ],
           }),
           exclude: /node_modules/

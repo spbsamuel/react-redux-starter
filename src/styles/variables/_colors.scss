@@ -1,0 +1,30 @@
+$blue: #0074D9;
+$green: #2ECC40;
+$yellow: #FFDC00;
+$orange: #FF851B;
+$red: #FF4136;
+$white: #FFFFFF;
+$gray: #AAAAAA;
+$black: #111111;
+
+$primary: $blue;
+$secondary: $gray;
+$warning: $yellow;
+$danger: $red;
+
+.primary {
+  color: $primary;
+}
+
+.secondary {
+  color: $secondary;
+}
+
+.warning {
+  color: $warning;
+}
+
+.danger {
+  color: $danger;
+}
+

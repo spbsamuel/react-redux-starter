@@ -1,0 +1,30 @@
+@import 'styles/_main_variables.scss';
+
+.text-left{
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
+.text-center{
+  text-align: center;
+}
+
+.text-sm{
+  font-size: 12px;
+}
+
+.text-sm{
+  font-size: 14px;
+}
+
+.text-lg{
+  font-size: 16px;
+}
+
+.responsive{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
