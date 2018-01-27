@@ -2,6 +2,7 @@ import React from 'react'
 import cx from 'classnames'
 
 import cls from './Counter.scss'
+import reactLogo from './assets/React-icon.png'
 
 function Counter({count, increment, decrement}) {
   const CountClass = cx(
@@ -13,6 +14,7 @@ function Counter({count, increment, decrement}) {
   );
   return (
     <div>
+      <img src={reactLogo}/>
       <h1 className={CountClass}>
         {count}
       </h1>
