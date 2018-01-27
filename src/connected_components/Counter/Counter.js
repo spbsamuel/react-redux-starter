@@ -14,12 +14,14 @@ function Counter({count, increment, decrement}) {
   );
   return (
     <div className='text-center'>
-      <img src={reactLogo}/>
+      <img className='responsive' src={reactLogo}/>
       <h1 className={CountClass}>
         {count}
       </h1>
-      <button className={cls.CounterBtn} onClick={increment}>Increase by 1</button>
-      <button className={cls.CounterBtn} onClick={decrement}>Decrease by 1</button>
+      <div className='row'>
+        <button className={cx('col-xs-12 col-sm-6',cls.CounterBtn)} onClick={increment}>Increase by 1</button>
+        <button className={cx('col-xs-12 col-sm-6',cls.CounterBtn)} onClick={decrement}>Decrease by 1</button>
+      </div>
     </div>
   )
 }
