@@ -8,7 +8,6 @@ module.exports =
   {
     entry: [
       './src/app.js',
-      './src/app.scss'
     ],
     output: {
       path: PATHS.dist,
@@ -18,6 +17,11 @@ module.exports =
     devtool: 'source-map',
     module: {
       loaders: [
+        {
+          test: /\.js$/,
+          use: 'babel-loader',
+          exclude: /node_modules/
+        },
         {
           test: /\.scss$/,
           use: ['style-loader', 'css-loader', 'sass-loader'],
