@@ -1,0 +1,8 @@
+{
+  "name": "react-redux-starter",
+  "version": "1.0.0",
+  "description": "Bare minimum react starter",
+  "main": "index.js",
+  "author": "samuel",
+  "license": "MIT"
+}
