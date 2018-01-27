@@ -1,0 +1,12 @@
+# Logs
+yarn-debug.log*
+yarn-error.log*
+
+# Build files
+dist/
+
+# Dependency directories
+node_modules/
+
+# Otters (others)
+.idea/
