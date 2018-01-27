@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -14,8 +15,7 @@ module.exports =
     ],
     output: {
       path: PATHS.dist,
-      publicPath: '/dist/',
-      filename: 'app.js'
+      filename: 'static/app.[chunkhash].js'
     },
     resolve: {
       modules: [
@@ -32,8 +32,11 @@ module.exports =
           warnings: false
         }
       }),
+      new HtmlWebpackPlugin({
+        template: 'index.template.html'
+      }),
       new ExtractTextPlugin({
-        filename: 'app.css',
+        filename: 'static/style.[chunkhash].css',
         allChunks: true
       })
     ],
@@ -64,6 +67,7 @@ module.exports =
           test: /\.(png|jpg|jpeg)$/,
           loader: 'url-loader',
           options: {
+            name: 'static/[name]-[hash:base64:10].[ext]',
             limit: 8192,
           },
           exclude: /node_modules/
