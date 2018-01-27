@@ -4,7 +4,6 @@ import {Provider} from 'react-redux'
 
 import storeFactory from './store/storeFactory'
 import ConnectedCounter from 'connected_components/Counter'
-import './app.scss'
 
 const initialState = {};
 const store = storeFactory(initialState);
