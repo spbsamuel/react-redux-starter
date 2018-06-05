@@ -10,13 +10,13 @@ This starter tries to include as little as possible to make it easier to underst
 
 ## Requirements
 * node
-* yarn [Installation guide](https://yarnpkg.com/lang/en/docs/install/)
+* npm [Installation guide](https://www.npmjs.com/get-npm)
 
 
 ## Installation
 
 ```bash
-$ yarn  # Install project dependencies
+$ npm install  # Install project dependencies
 ```
 
 ## Run application locally
@@ -24,14 +24,14 @@ $ yarn  # Install project dependencies
 After [installing the  application](#installation), you're good to go!
 
 ```bash
-$ yarn serve
+$ npm run serve
 ```
 
 The application will be running at [localhost:8080](http://localhost:8080)
 
 ## Other scripts
 
-|`yarn <script>`    |Description|
+|`npm run <script>`    |Description|
 |-------------------|-----------|
 |`serve`            |Serves your app at `localhost:8080`|
 |`build`            |Builds the application to ./dist|
