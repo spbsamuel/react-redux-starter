@@ -6,9 +6,9 @@
   "author": "samuel",
   "license": "MIT",
   "scripts": {
-    "build": "rimraf dist && webpack -p --config webpack.production.config.js",
+    "build": "rimraf dist && webpack --config webpack.production.config.js",
     "serve:prod": "http-server ./dist -a localhost -p 8080",
-    "serve": "node dev-server.js"
+    "serve": "webpack-serve --config webpack.development.config.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -34,7 +34,7 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.2",
-    "webpack-dev-server": "^3.1.4"
+    "webpack-serve": "^1.0.2"
   },
   "dependencies": {
     "npm": "^6.1.0"

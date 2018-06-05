@@ -2,19 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 
 const ENV_GLOBALS = {
-  'process.env': {
-    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-  },
-  '__DEV__': JSON.stringify(process.env.NODE_ENV === 'development'),
-  '__PROD__': JSON.stringify(process.env.NODE_ENV === 'production'),
+  '__DEV__': true,
+  '__PROD__': false,
 };
 
 module.exports =
   {
     mode: 'development',
     entry: [
-      'webpack-dev-server/client?http://localhost:8080',
-      'webpack/hot/dev-server',
       './src/app.js',
     ],
     output: {
@@ -31,8 +26,13 @@ module.exports =
     devtool: 'source-map',
     plugins: [
       new webpack.DefinePlugin(ENV_GLOBALS),
-      new webpack.HotModuleReplacementPlugin(),
     ],
+    serve: {
+      dev: {
+        filename: 'app.js',
+        publicPath: '/static/',
+      }
+    },
     module: {
       rules: [
         {
