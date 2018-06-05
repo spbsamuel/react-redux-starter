@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -18,6 +19,7 @@ const ENV_GLOBALS = {
 
 module.exports =
   {
+    mode: 'production',
     entry: [
       './src/app.js',
     ],
@@ -34,13 +36,6 @@ module.exports =
     },
     plugins: [
       new webpack.DefinePlugin(ENV_GLOBALS),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          unused: true,
-          dead_code: true,
-          warnings: false
-        }
-      }),
       new HtmlWebpackPlugin({
         template: 'index.template.html'
       }),
@@ -49,8 +44,21 @@ module.exports =
         allChunks: true
       })
     ],
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin({
+          uglifyOptions:{
+            compress: {
+              unused: true,
+              dead_code: true,
+              warnings: false
+            }
+          }
+        }),
+      ]
+    },
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.jsx?$/,
           use: 'babel-loader',

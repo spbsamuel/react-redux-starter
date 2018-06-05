@@ -11,6 +11,7 @@ const ENV_GLOBALS = {
 
 module.exports =
   {
+    mode: 'development',
     entry: [
       'webpack-dev-server/client?http://localhost:8080',
       'webpack/hot/dev-server',
@@ -33,7 +34,7 @@ module.exports =
       new webpack.HotModuleReplacementPlugin(),
     ],
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.jsx?$/,
           use: 'babel-loader',
